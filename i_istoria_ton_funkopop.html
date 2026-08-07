@@ -1,109 +1,311 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-<title> Funko Planet </title>
+<title id="page-title"> Funko Planet </title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--για να προσαρμοστεί στο κινητό -->
-<link rel="stylesheet" href="style.css"> <!--με αυτή τη σειρά κώδικα θα συνδεθεί το αρχείο της html με το αρχείο css-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<style>
+  .translate-box {
+    float: right;
+    margin: 10px;
+  }
+  .translate-box select {
+    padding: 5px 10px;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .content-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .content-container p {
+    line-height: 1.6;
+    text-align: justify;
+  }
+  form {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+  }
+  form p {
+    text-align: left !important;
+    font-weight: bold;
+  }
+  input[type="Submit"] {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  input[type="Submit"]:hover {
+    background-color: #e6b800;
+  }
+</style>
 </head>
 <body class="i_istoria_ton_funkopop-page">
-<header> <!-- με αυτή την ετικέτα δηλώνεται η επικεφαλίδα -->
-<nav> <!-- με αυτή τη ετικέτα ομαδοποιώ τα links της πλοήγησης και είναι βοηθητικό για το SEO της ιστοσελίδας -->
+<header>
+<div class="translate-box">
+  <select id="langSelect" onchange="switchLanguage(this.value)">
+    <option value="el">Ελληνικά</option>
+    <option value="en">English</option>
+  </select>
+</div>
+<nav>
 <div class="owner">
-    <a href="../index.html">Μαίρη Κάντα</a>
+    <a href="../index.html" id="nav-owner">Μαίρη Κάντα</a>
   </div>  
 <div class="logo"> Funko Planet </div>
-<img src="logo.jpg"width="200" height="200">
+<img src="logo.jpg" width="200" height="200" alt="Funko Planet Logo">
 <ul>
-<li> <a href="index.html"> Αρχική </a></li>
-<li> <a href="i_istoria_ton_funkopop.html"> Η ιστορία των Funko Pop </a> </li>
-<li> <a href="proionta.html"> Προϊόντα </a> </li>
-<li><a href="game.php"> Παιχνίδι</a></li>
-<li> <a href="kalathi.php"> Καλάθι </a></li>
+<li> <a href="index.html" id="nav-home"> Αρχική </a></li>
+<li> <a href="i_istoria_ton_funkopop.html" id="nav-history"> Η ιστορία των Funko Pop </a> </li>
+<li> <a href="proionta.html" id="nav-products"> Προϊόντα </a> </li>
+<li><a href="game.php" id="nav-game"> Παιχνίδι</a></li>
+<li> <a href="kalathi.php" id="nav-cart"> Καλάθι </a></li>
 </ul>
-</nav></header>
-<h1> Η ιστορία των Funko Pop </h1> <br>
-<p> Η ιστορία των Funko Pop άρχισε στα τέλη της δεκαετίας του 1990,<br>
- όταν ο Mike Becker ίδρυσε την εταιρεία Funko. Ο στόχος του ήταν να <br>
- δημιουργήσει νοσταλγικά συλλεκτικά παιχνίδια εμπνευσμένα από την pop κουλτούρα. <br>
- Τα παιχνίδια είχαν χαμηλό κόστος. Η πρώτη μεγάλη επιτυχία του ήρθε με φιγούρες τύπου “bobblehead” που ξεκίνησαν <br>
- να κερδίζουν το ενδιαφέρον συλλεκτών.<br><br>
-Τα <b> bobbleheads </b> είναι μικρές συλλεκτικές φιγούρες που έχουν ένα χαρακτηριστικό: το κεφάλι τους είναι πολύ μεγάλο<br>
+</nav>
+</header>
+
+<div class="content-container">
+<h1 id="main-heading"> Η ιστορία των Funko Pop </h1> <br>
+<p id="history-text"> Η ιστορία των Funko Pop άρχισε στα τέλη της δεκαετίας του 1990,
+όταν ο Mike Becker ίδρυσε την εταιρεία Funko. Ο στόχος του ήταν να 
+δημιουργήσει νοσταλγικά συλλεκτικά παιχνίδια εμπνευσμένα από την pop κουλτούρα. 
+Τα παιχνίδια είχαν χαμηλό κόστος. Η πρώτη μεγάλη επιτυχία του ήρθε με φιγούρες τύπου “bobblehead” που ξεκίνησαν 
+να κερδίζουν το ενδιαφέρον συλλεκτών.<br><br>
+Τα <b> bobbleheads </b> είναι μικρές συλλεκτικές φιγούρες που έχουν ένα χαρακτηριστικό: το κεφάλι τους είναι πολύ μεγάλο
 και δεν είναι σταθερό πάνω στο σώμα. Συνδέεται με ένα μικρό ελατήριο και κουνιέται όταν το ακουμπήσεις ή το μετακινήσεις.<br>
-Το 2005 ο Brian Mariotti πήρε την εταιρεία με σκοπό να την εξελίσσει και να την επεκτείνει. Έτσι, άρχισε να <br>
+Το 2005 ο Brian Mariotti πήρε την εταιρεία με σκοπό να την εξελίξει και να την επεκτείνει. Έτσι, άρχισε να 
 συνεργάζεται με μεγάλα στούντιο και να αποκτά πρόσβαση σε μεγάλους κόσμους από ταινίες, βιντεοπαιχνίδια, σειρές και κόμικς. <br><br>
-Η εταιρεία απογειώθηκε το 2010 με την δημιουργία της σειράς Funko Pop!. Αυτές οι φιγούρες είχαν ένα μοναδικό σχεδιασμό: <br>
- μεγάλα κεφάλια, μικρά σώματα και μίνιμαλ χαρακτηριστικά.  Στα επόμενα χρόνια, τα Funko Pop εξελίχθηκαν σε μια από <br>
- τις πιο δημοφιλείς συλλεκτικές σειρές στον κόσμο. Σήμερα, δεν είναι απλά παιχνίδια, αλλά κομμάτι <br> 
- μίας παγκόσμιας συλλεκτικής κουλτούρας που συνεχίζει να μεγαλώνει και να εξελίσσεται. <br> </p><br>
+Η εταιρεία απογειώθηκε το 2010 με την δημιουργία της σειράς Funko Pop!. Αυτές οι φιγούρες είχαν ένα μοναδικό σχεδιασμό: 
+μεγάλα κεφάλια, μικρά σώματα και μίνιμαλ χαρακτηριστικά. Στα επόμενα χρόνια, τα Funko Pop εξελίχθηκαν σε μια από 
+τις πιο δημοφιλείς συλλεκτικές σειρές στον κόσμο. Σήμερα, δεν είναι απλά παιχνίδια, αλλά κομμάτι 
+μίας παγκόσμιας συλλεκτικής κουλτούρας που συνεχίζει να μεγαλώνει και να εξελίσσεται. </p><br>
  <hr><br><br>
- <h2> Πόσα γνωρίζεις για τα Funko Pop; Θα το ανακαλύψεις, κάνοντας το παρακάτω quiz! </h2> <br>
+ <h2 id="quiz-title"> Πόσα γνωρίζεις για τα Funko Pop; Θα το ανακαλύψεις, κάνοντας το παρακάτω quiz! </h2> <br>
  <hr><br>
- <form action="quiz1.php" method="post"> <!-- Σε αυτό το σημείο θα σταλθούν τα δεδομένα από το αρχείο της html στο αρχείο της php -->
- <p> <b> 1. Τα Funko Pop βασίζονται κυρίως σε χαρακτήρες από: </b> </p>
- <input type="radio" name="q1"value="Α"> Μόνο κινούμενα σχέδια <br>
- <input type="radio" name="q1"value="Β"> Μόνο αθλητές <br>
- <input type="radio" name="q1" value="Γ"> Pop κουλτούρα (ταινίες, σειρές, παιχνίδια κ.λ.π.) <br>
- <input type="radio" name="q1" value= "Δ"> Ιστορικά πρόσωπα μόνο <br><br>
- <p> <b> 2. Τι σημαίνει όταν ένα Funko Pop είναι "Exclusive"; </b> </p>
- <input type="radio"name="q2"value="Α"> Είναι ψεύτικο <br>
- <input type="radio"name="q2"value="Β"> Κυκλοφορεί μόνο σε συγκεκριμένο κατάστημα ή event <br>
- <input type="radio"name="q2"value="Γ"> Είναι μεγαλύτερο σε μέγεθος <br>
- <input type="radio"name="q2"value="Δ"> Εϊναι χωρίς κουτί <br><br>
- <p> <b> 3. Ποια κατηγορία Funko είναι πιο δημοφιλής; </b> </p>
- <input type="radio"name="q3"value="Α"> Funko Soda <br>
- <input type="radio"name="q3"value="Β"> Funko Plush <br>
- <input type="radio"name="q3"value="Γ"> Funko Pop! Vinyl <br>
- <input type="radio"name="q3"value="Δ"> Funko Games <br> <br>
- <p> <b> 4. Τι είναι το "Chase" σε ένα Funko Pop; </b> </p>
- <input type="radio"name="q4"value="Α"> Ένα σπασμένο Funko <br>
- <input type="radio"name="q4"value="Β"> Μία σπάνια παραλλαγή της φιγούρας <br>
- <input type="radio"name="q4"value="Γ"> Ένα αυτοκόλλητο <br>
- <input type="radio"name="q4"value="Δ"> Ένα app της Funko <br>
- <p> <b> 5. Ποιο από τα παρακάτω ΔΕΝ είναι franchise που έχει Funko Pops; </b> <br><br>
- <input type="radio"name="q5"value="Α"> Marvel <br>
- <input type="radio"name="q5"value="Β"> Harry Potter <br>
- <input type="radio"name="q5"value="Γ"> Pokemon <br>
- <input type="radio"name="q5"value="Δ"> Barbie Dream House Builders <br><br>
- <p> <b> 6. Γιατί πολλοί συλλέκτες κρατούν τα Funko μέσα στο κουτί; </b></p>
- <input type="radio"name="q6"value="Α"> Για προστασία και μεγαλύτερη συλλεκτική αξία <br>
- <input type="radio"name="q6"value="Β"> Γιατί δεν ανοίγουν <br>
- <input type="radio"name="q6"value="Γ"> Γιατί είναι επικίνδυνα <br>
- <input type="radio"name="q6"value="Δ"> Για διακόσμηση μόνο <br><br>
- <p> <b> 7. Πώς ονομάζεται η ετήσια μεγάλη εκδήλωση της Funko; </b> </p>
- <input type="radio"name="q7"value="Α"> Pop Expo <br>
- <input type="radio"name="q7"value="Β"> Funko Fair <br>
- <input type="radio"name="q7"value="Γ"> Comic Celebration <br>
- <input type="radio"name="q7"value="Δ"> Toy Universe <br><br>
- <p> <b> 8. Τι σημαίνει "Vaulted"; </b></p>
- <input type="radio"name="q8"value="Α"> Το Funko έχει σταματήσει να παράγεται <br>
- <input type="radio"name="q8"value="Β"> Είναι κατεστραμμένο <br>
- <input type="radio"name="q8"value="Γ"> Είναι δωρεάν <br>
- <input type="radio"name="q8"value="Δ"> Είναι ψεύτικο <br><br>
- <input type="Submit" value="Υποβολή"> <br>
+
+ <form action="quiz1.php" method="post">
+ <p id="q1-text"> 1. Τα Funko Pop βασίζονται κυρίως σε χαρακτήρες από: </p>
+ <input type="radio" name="q1" value="Α"> <span id="q1-opt1">Μόνο κινούμενα σχέδια</span> <br>
+ <input type="radio" name="q1" value="Β"> <span id="q1-opt2">Μόνο αθλητές</span> <br>
+ <input type="radio" name="q1" value="Γ"> <span id="q1-opt3">Pop κουλτούρα (ταινίες, σειρές, παιχνίδια κ.λ.π.)</span> <br>
+ <input type="radio" name="q1" value="Δ"> <span id="q1-opt4">Ιστορικά πρόσωπα μόνο</span> <br><br>
+
+ <p id="q2-text"> 2. Τι σημαίνει όταν ένα Funko Pop είναι "Exclusive"; </p>
+ <input type="radio" name="q2" value="Α"> <span id="q2-opt1">Είναι ψεύτικο</span> <br>
+ <input type="radio" name="q2" value="Β"> <span id="q2-opt2">Κυκλοφορεί μόνο σε συγκεκριμένο κατάστημα ή event</span> <br>
+ <input type="radio" name="q2" value="Γ"> <span id="q2-opt3">Είναι μεγαλύτερο σε μέγεθος</span> <br>
+ <input type="radio" name="q2" value="Δ"> <span id="q2-opt4">Είναι χωρίς κουτί</span> <br><br>
+
+ <p id="q3-text"> 3. Ποια κατηγορία Funko είναι πιο δημοφιλής; </p>
+ <input type="radio" name="q3" value="Α"> <span id="q3-opt1">Funko Soda</span> <br>
+ <input type="radio" name="q3" value="Β"> <span id="q3-opt2">Funko Plush</span> <br>
+ <input type="radio" name="q3" value="Γ"> <span id="q3-opt3">Funko Pop! Vinyl</span> <br>
+ <input type="radio" name="q3" value="Δ"> <span id="q3-opt4">Funko Games</span> <br> <br>
+
+ <p id="q4-text"> 4. Τι είναι το "Chase" σε ένα Funko Pop; </p>
+ <input type="radio" name="q4" value="Α"> <span id="q4-opt1">Ένα σπασμένο Funko</span> <br>
+ <input type="radio" name="q4" value="Β"> <span id="q4-opt2">Μία σπάνια παραλλαγή της φιγούρας</span> <br>
+ <input type="radio" name="q4" value="Γ"> <span id="q4-opt3">Ένα αυτοκόλλητο</span> <br>
+ <input type="radio" name="q4" value="Δ"> <span id="q4-opt4">Ένα app της Funko</span> <br><br>
+
+ <p id="q5-text"> 5. Ποιο από τα παρακάτω ΔΕΝ είναι franchise που έχει Funko Pops; </p>
+ <input type="radio" name="q5" value="Α"> <span id="q5-opt1">Marvel</span> <br>
+ <input type="radio" name="q5" value="Β"> <span id="q5-opt2">Harry Potter</span> <br>
+ <input type="radio" name="q5" value="Γ"> <span id="q5-opt3">Pokemon</span> <br>
+ <input type="radio" name="q5" value="Δ"> <span id="q5-opt4">Barbie Dream House Builders</span> <br><br>
+
+ <p id="q6-text"> 6. Γιατί πολλοί συλλέκτες κρατούν τα Funko μέσα στο κουτί; </p>
+ <input type="radio" name="q6" value="Α"> <span id="q6-opt1">Για προστασία και μεγαλύτερη συλλεκτική αξία</span> <br>
+ <input type="radio" name="q6" value="Β"> <span id="q6-opt2">Γιατί δεν ανοίγουν</span> <br>
+ <input type="radio" name="q6" value="Γ"> <span id="q6-opt3">Γιατί είναι επικίνδυνα</span> <br>
+ <input type="radio" name="q6" value="Δ"> <span id="q6-opt4">Για διακόσμηση μόνο</span> <br><br>
+
+ <p id="q7-text"> 7. Πώς ονομάζεται η ετήσια μεγάλη εκδήλωση της Funko; </p>
+ <input type="radio" name="q7" value="Α"> <span id="q7-opt1">Pop Expo</span> <br>
+ <input type="radio" name="q7" value="Β"> <span id="q7-opt2">Funko Fair</span> <br>
+ <input type="radio" name="q7" value="Γ"> <span id="q7-opt3">Comic Celebration</span> <br>
+ <input type="radio" name="q7" value="Δ"> <span id="q7-opt4">Toy Universe</span> <br><br>
+
+ <p id="q8-text"> 8. Τι σημαίνει "Vaulted"; </p>
+ <input type="radio" name="q8" value="Α"> <span id="q8-opt1">Το Funko έχει σταματήσει να παράγεται</span> <br>
+ <input type="radio" name="q8" value="Β"> <span id="q8-opt2">Είναι κατεστραμμένο</span> <br>
+ <input type="radio" name="q8" value="Γ"> <span id="q8-opt3">Είναι δωρεάν</span> <br>
+ <input type="radio" name="q8" value="Δ"> <span id="q8-opt4">Είναι ψεύτικο</span> <br><br>
+
+ <input type="submit" id="submit-btn" value="Υποβολή"> <br>
  </form> <br> <br>
  <hr>
  <div class="game-cta">
-    <h2>🎁 Κέρδισε έκπτωση</h2>
-    <p>Παίξε το Funko Game και πάρε κουπόνι -15%</p>
+    <h2 id="cta-title">🎁 Κέρδισε έκπτωση</h2>
+    <p id="cta-desc">Παίξε το Funko Game και πάρε κουπόνι -15%</p>
     <a href="game.php">
-        <button>Παίξε τώρα</button>
+        <button id="cta-btn">Παίξε τώρα</button>
     </a>
 </div>
- <footer> 
- <div class="footer-content">
- <p> &#64; 2026 Funko Planet </p>
- <p> Επικοινωνία: funkoplanet@gmail.com </p>
- <p> Δημιουργία: <a href="../index.html">Μαίρη Κάντα</a> </p>
- </div>
- </footer>
- 
+</div>
 
- </body>
- </html>
+<footer> 
+<div class="footer-content">
+<p> &#64; 2026 Funko Planet </p>
+<p id="footer-contact"> Επικοινωνία: funkoplanet@gmail.com </p>
+<p id="footer-creator"> Δημιουργία: <a href="../index.html">Μαίρη Κάντα</a> </p>
+</div>
+</footer>
  
- 
- 
- 
- 
- 
+<script>
+  function switchLanguage(lang) {
+    if (lang === 'en') {
+      document.getElementById('page-title').innerText = "Funko Planet";
+      document.getElementById('nav-owner').innerText = "Mary Kanta";
+      document.getElementById('nav-home').innerText = "Home";
+      document.getElementById('nav-history').innerText = "History of Funko Pops";
+      document.getElementById('nav-products').innerText = "Products";
+      document.getElementById('nav-game').innerText = "Game";
+      document.getElementById('nav-cart').innerText = "Cart";
+
+      document.getElementById('main-heading').innerText = "The History of Funko Pops";
+      document.getElementById('history-text').innerHTML = "The history of Funko Pops began in the late 1990s, when Mike Becker founded the Funko company. His goal was to create nostalgic collectible toys inspired by pop culture. The toys had a low cost. His first major success came with bobblehead-style figures that started gaining the interest of collectors.<br><br><b>Bobbleheads</b> are small collectible figures that have a characteristic feature: their head is very large and not fixed rigidly to the body. It is connected by a small spring and wobbles when touched or moved.<br>In 2005, Brian Mariotti took over the company with the aim of developing and expanding it. Thus, he began collaborating with major studios and gaining access to vast worlds from movies, video games, series, and comics.<br><br>The company took off in 2010 with the creation of the Funko Pop! series. These figures had a unique design: large heads, small bodies, and minimal features. In the following years, Funko Pops evolved into one of the most popular collectible series in the world. Today, they are not just toys, but part of a global collecting culture that continues to grow and evolve.";
+
+      document.getElementById('quiz-title').innerText = "How much do you know about Funko Pops? Find out by taking the quiz below!";
+      
+      document.getElementById('q1-text').innerText = "1. Funko Pops are mainly based on characters from:";
+      document.getElementById('q1-opt1').innerText = "Cartoons only";
+      document.getElementById('q1-opt2').innerText = "Athletes only";
+      document.getElementById('q1-opt3').innerText = "Pop culture (movies, series, games, etc.)";
+      document.getElementById('q1-opt4').innerText = "Historical figures only";
+
+      document.getElementById('q2-text').innerText = "2. What does it mean when a Funko Pop is 'Exclusive'?";
+      document.getElementById('q2-opt1').innerText = "It is fake";
+      document.getElementById('q2-opt2').innerText = "It is released only in a specific store or event";
+      document.getElementById('q2-opt3').innerText = "It is larger in size";
+      document.getElementById('q2-opt4').innerText = "It comes without a box";
+
+      document.getElementById('q3-text').innerText = "3. Which Funko category is the most popular?";
+      document.getElementById('q3-opt1').innerText = "Funko Soda";
+      document.getElementById('q3-opt2').innerText = "Funko Plush";
+      document.getElementById('q3-opt3').innerText = "Funko Pop! Vinyl";
+      document.getElementById('q3-opt4').innerText = "Funko Games";
+
+      document.getElementById('q4-text').innerText = "4. What is a 'Chase' in a Funko Pop?";
+      document.getElementById('q4-opt1').innerText = "A broken Funko";
+      document.getElementById('q4-opt2').innerText = "A rare variant of the figure";
+      document.getElementById('q4-opt3').innerText = "A sticker";
+      document.getElementById('q4-opt4').innerText = "A Funko app";
+
+      document.getElementById('q5-text').innerText = "5. Which of the following is NOT a franchise that has Funko Pops?";
+      document.getElementById('q5-opt1').innerText = "Marvel";
+      document.getElementById('q5-opt2').innerText = "Harry Potter";
+      document.getElementById('q5-opt3').innerText = "Pokemon";
+      document.getElementById('q5-opt4').innerText = "Barbie Dream House Builders";
+
+      document.getElementById('q6-text').innerText = "6. Why do many collectors keep Funkos inside the box?";
+      document.getElementById('q6-opt1').innerText = "For protection and higher collectible value";
+      document.getElementById('q6-opt2').innerText = "Because they don't open";
+      document.getElementById('q6-opt3').innerText = "Because they are dangerous";
+      document.getElementById('q6-opt4').innerText = "For decoration only";
+
+      document.getElementById('q7-text').innerText = "7. What is the name of Funko's major annual event?";
+      document.getElementById('q7-opt1').innerText = "Pop Expo";
+      document.getElementById('q7-opt2').innerText = "Funko Fair";
+      document.getElementById('q7-opt3').innerText = "Comic Celebration";
+      document.getElementById('q7-opt4').innerText = "Toy Universe";
+
+      document.getElementById('q8-text').innerText = "8. What does 'Vaulted' mean?";
+      document.getElementById('q8-opt1').innerText = "The Funko has stopped being produced";
+      document.getElementById('q8-opt2').innerText = "It is damaged";
+      document.getElementById('q8-opt3').innerText = "It is free";
+      document.getElementById('q8-opt4').innerText = "It is fake";
+
+      document.getElementById('submit-btn').value = "Submit";
+      document.getElementById('cta-title').innerText = "🎁 Win a Discount";
+      document.getElementById('cta-desc').innerText = "Play the Funko Game and get a -15% coupon";
+      document.getElementById('cta-btn').innerText = "Play Now";
+
+      document.getElementById('footer-contact').innerText = "Contact: funkoplanet@gmail.com";
+      document.getElementById('footer-creator').innerHTML = "Created by: <a href='../index.html'>Mary Kanta</a>";
+    } else {
+      document.getElementById('page-title').innerText = "Funko Planet";
+      document.getElementById('nav-owner').innerText = "Μαίρη Κάντα";
+      document.getElementById('nav-home').innerText = "Αρχική";
+      document.getElementById('nav-history').innerText = "Η ιστορία των Funko Pop";
+      document.getElementById('nav-products').innerText = "Προϊόντα";
+      document.getElementById('nav-game').innerText = "Παιχνίδι";
+      document.getElementById('nav-cart').innerText = "Καλάθι";
+
+      document.getElementById('main-heading').innerText = "Η ιστορία των Funko Pop";
+      document.getElementById('history-text').innerHTML = "Η ιστορία των Funko Pop άρχισε στα τέλη της δεκαετίας του 1990,<br>όταν ο Mike Becker ίδρυσε την εταιρεία Funko. Ο στόχος του ήταν να <br>δημιουργήσει νοσταλγικά συλλεκτικά παιχνίδια εμπνευσμένα από την pop κουλτούρα. <br>Τα παιχνίδια είχαν χαμηλό κόστος. Η πρώτη μεγάλη επιτυχία του ήρθε με φιγούρες τύπου “bobblehead” που ξεκίνησαν <br>να κερδίζουν το ενδιαφέρον συλλεκτών.<br><br>Τα <b> bobbleheads </b> είναι μικρές συλλεκτικές φιγούρες που έχουν ένα χαρακτηριστικό: το κεφάλι τους είναι πολύ μεγάλο<br>και δεν είναι σταθερό πάνω στο σώμα. Συνδέεται με ένα μικρό ελατήριο και κουνιέται όταν το ακουμπήσεις ή το μετακινήσεις.<br>Το 2005 ο Brian Mariotti πήρε την εταιρεία με σκοπό να την εξελίσσει και να την επεκτείνει. Έτσι, άρχισε να <br>συνεργάζεται με μεγάλα στούντιο και να αποκτά πρόσβαση σε μεγάλους κόσμους από ταινίες, βιντεοπαιχνίδια, σειρές και κόμικς. <br><br>Η εταιρεία απογειώθηκε το 2010 με την δημιουργία της σειράς Funko Pop!. Αυτές οι φιγούρες είχαν ένα μοναδικό σχεδιασμό: <br>μεγάλα κεφάλια, μικρά σώματα και μίνιμαλ χαρακτηριστικά. Στα επόμενα χρόνια, τα Funko Pop εξελίχθηκαν σε μια από <br>τις πιο δημοφιλείς συλλεκτικές σειρές στον κόσμο. Σήμερα, δεν είναι απλά παιχνίδια, αλλά κομμάτι <br>μίας παγκόσμιας συλλεκτικής κουλτούρας που συνεχίζει να μεγαλώνει και να εξελίσσεται.";
+
+      document.getElementById('quiz-title').innerText = "Πόσα γνωρίζεις για τα Funko Pop; Θα το ανακαλύψεις, κάνοντας το παρακάτω quiz!";
+      
+      document.getElementById('q1-text').innerText = "1. Τα Funko Pop βασίζονται κυρίως σε χαρακτήρες από:";
+      document.getElementById('q1-opt1').innerText = "Μόνο κινούμενα σχέδια";
+      document.getElementById('q1-opt2').innerText = "Μόνο αθλητές";
+      document.getElementById('q1-opt3').innerText = "Pop κουλτούρα (ταινίες, σειρές, παιχνίδια κ.λ.π.)";
+      document.getElementById('q1-opt4').innerText = "Ιστορικά πρόσωπα μόνο";
+
+      document.getElementById('q2-text').innerText = "2. Τι σημαίνει όταν ένα Funko Pop είναι \"Exclusive\";";
+      document.getElementById('q2-opt1').innerText = "Είναι ψεύτικο";
+      document.getElementById('q2-opt2').innerText = "Κυκλοφορεί μόνο σε συγκεκριμένο κατάστημα ή event";
+      document.getElementById('q2-opt3').innerText = "Είναι μεγαλύτερο σε μέγεθος";
+      document.getElementById('q2-opt4').innerText = "Εϊναι χωρίς κουτί";
+
+      document.getElementById('q3-text').innerText = "3. Ποια κατηγορία Funko είναι πιο δημοφιλής;";
+      document.getElementById('q3-opt1').innerText = "Funko Soda";
+      document.getElementById('q3-opt2').innerText = "Funko Plush";
+      document.getElementById('q3-opt3').innerText = "Funko Pop! Vinyl";
+      document.getElementById('q3-opt4').innerText = "Funko Games";
+
+      document.getElementById('q4-text').innerText = "4. Τι είναι το \"Chase\" σε ένα Funko Pop;";
+      document.getElementById('q4-opt1').innerText = "Ένα σπασμένο Funko";
+      document.getElementById('q4-opt2').innerText = "Μία σπάνια παραλλαγή της φιγούρας";
+      document.getElementById('q4-opt3').innerText = "Ένα αυτοκόλλητο";
+      document.getElementById('q4-opt4').innerText = "Ένα app της Funko";
+
+      document.getElementById('q5-text').innerText = "5. Ποιο από τα παρακάτω ΔΕΝ είναι franchise που έχει Funko Pops;";
+      document.getElementById('q5-opt1').innerText = "Marvel";
+      document.getElementById('q5-opt2').innerText = "Harry Potter";
+      document.getElementById('q5-opt3').innerText = "Pokemon";
+      document.getElementById('q5-opt4').innerText = "Barbie Dream House Builders";
+
+      document.getElementById('q6-text').innerText = "6. Γιατί πολλοί συλλέκτες κρατούν τα Funko μέσα στο κουτί;";
+      document.getElementById('q6-opt1').innerText = "Για προστασία και μεγαλύτερη συλλεκτική αξία";
+      document.getElementById('q6-opt2').innerText = "Γιατί δεν ανοίγουν";
+      document.getElementById('q6-opt3').innerText = "Γιατί είναι επικίνδυνα";
+      document.getElementById('q6-opt4').innerText = "Για διακόσμηση μόνο";
+
+      document.getElementById('q7-text').innerText = "7. Πώς ονομάζεται η ετήσια μεγάλη εκδήλωση της Funko;";
+      document.getElementById('q7-opt1').innerText = "Pop Expo";
+      document.getElementById('q7-opt2').innerText = "Funko Fair";
+      document.getElementById('q7-opt3').innerText = "Comic Celebration";
+      document.getElementById('q7-opt4').innerText = "Toy Universe";
+
+      document.getElementById('q8-text').innerText = "8. Τι σημαίνει \"Vaulted\";";
+      document.getElementById('q8-opt1').innerText = "Το Funko έχει σταματήσει να παράγεται";
+      document.getElementById('q8-opt2').innerText = "Είναι κατεστραμμένο";
+      document.getElementById('q8-opt3').innerText = "Είναι δωρεάν";
+      document.getElementById('q8-opt4').innerText = "Είναι ψεύτικο";
+
+      document.getElementById('submit-btn').value = "Υποβολή";
+      document.getElementById('cta-title').innerText = "🎁 Κέρδισε έκπτωση";
+      document.getElementById('cta-desc').innerText = "Παίξε το Funko Game και πάρε κουπόνι -15%";
+      document.getElementById('cta-btn').innerText = "Παίξε τώρα";
+
+      document.getElementById('footer-contact').innerText = "Επικοινωνία: funkoplanet@gmail.com";
+      document.getElementById('footer-creator').innerHTML = "Δημιουργία: <a href='../index.html'>Μαίρη Κάντα</a>";
+    }
+  }
+</script>
+</body>
+</html>
