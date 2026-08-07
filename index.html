@@ -1,51 +1,117 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-<title> Funko Planet </title>
+<title id="page-title"> Funko Planet </title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- για να προσαρμοστεί στο κινητό -->
-<link rel="stylesheet" href="style.css"> <!--με αυτή τη σειρά κώδικα θα συνδεθεί το αρχείο της html με το αρχείο css-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<style>
+  .translate-box {
+    float: right;
+    margin: 10px;
+  }
+  .translate-box select {
+    padding: 5px 10px;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
-<header> <!-- με αυτή την ετικέτα δηλώνεται η επικεφαλίδα -->
-<nav> <!-- με αυτή τη ετικέτα ομαδοποιώ τα links της πλοήγησης και είναι βοηθητικό για το SEO της ιστοσελίδας -->
+<header>
+<div class="translate-box">
+  <select id="langSelect" onchange="switchLanguage(this.value)">
+    <option value="el">Ελληνικά</option>
+    <option value="en">English</option>
+  </select>
+</div>
+<nav>
  <div class="owner">
-    <a href="../index.html">Μαίρη Κάντα</a>
+    <a href="../index.html" id="nav-owner">Μαίρη Κάντα</a>
   </div>  
 <div class="logo"> Funko Planet </div>
 <ul>
-<li> <a href="index.html"> Αρχική </a></li>
-<li> <a href="i_istoria_ton_funkopop.html"> Η ιστορία των Funko Pop </a> </li>
-<li> <a href="proionta.html"> Προϊόντα </a> </li>
-<li><a href="game.php"> Παιχνίδι</a></li>
-<li> <a href="kalathi.php"> Καλάθι </a></li>
+<li> <a href="index.html" id="nav-home"> Αρχική </a></li>
+<li> <a href="i_istoria_ton_funkopop.html" id="nav-history"> Η ιστορία των Funko Pop </a> </li>
+<li> <a href="proionta.html" id="nav-products"> Προϊόντα </a> </li>
+<li><a href="game.php" id="nav-game"> Παιχνίδι</a></li>
+<li> <a href="kalathi.php" id="nav-cart"> Καλάθι </a></li>
 </ul>	
 </nav></header>
-<section id="hero"> <!-- Πρόσθεσα αυτή την ετικέτα για να δημιουργήσω ένα μεγάλο κομμάτι κείμενο στο κέντρο της σελίδας-->
+
+<section id="hero">
 <div class="hero-content">
-<h1> <b> Καλώς ήρθες στον Πλανήτη των Funko </b> </h1>
-<p> <br> στον απόλυτο προορισμό για κάθε συλλέκτη και fan της pop κουλτούρας <br>
+<h1 id="hero-title"> <b> Καλώς ήρθες στον Πλανήτη των Funko </b> </h1>
+<p id="hero-desc"> <br> στον απόλυτο προορισμό για κάθε συλλέκτη και fan της pop κουλτούρας <br>
 Στο Funko Pop e-shop μας θα βρεις μοναδικές φιγούρες από τους αγαπημένους σου ήρωες, <br>
-σειρές και ταινίεςπου απογειώνουν κάθε συλλογή. Κάθε Funko Pop είναι μια μικρή ιστορία,<br>
+σειρές και ταινίες που απογειώνουν κάθε συλλογή. Κάθε Funko Pop είναι μια μικρή ιστορία,<br>
  ένα κομμάτι από τον κόσμο που αγαπάς, έτοιμο να γίνει δικό σου.</p>
 <button id="changeImageButton">Αλλαγή εικόνας</button>
 </div></section>
-<hr> <!-- με αυτή τη ετικέτα, μπαίνει μια γραμμή στο site.-->
+
+<hr>
 <div class="game-cta">
-    <h2>🎁 Κέρδισε έκπτωση</h2>
-    <p>Παίξε το Funko Game και πάρε κουπόνι -10%</p>
+    <h2 id="cta-title">🎁 Κέρδισε έκπτωση</h2>
+    <p id="cta-desc">Παίξε το Funko Game και πάρε κουπόνι -10%</p>
     <a href="game.php">
-        <button>Παίξε τώρα</button>
+        <button id="cta-btn">Παίξε τώρα</button>
     </a>
 </div>
-<footer> <!-- Αυτή η ετικέτα είναι για το κείμενο που θα υπάρχει στο κάτω μέρος της ιστοσελίδας -->
+
+<footer> 
 <div class="footer-content">
 <p> &#64; 2026 Funko Planet </p>
-<p> Επικοινωνία: funkoplanet@gmail.com </p>
-<p> Δημιουργία: <a href="../index.html">Μαίρη Κάντα</a> </p>
+<p id="footer-contact"> Επικοινωνία: funkoplanet@gmail.com </p>
+<p id="footer-creator"> Δημιουργία: <a href="../index.html">Μαίρη Κάντα</a> </p>
 </div> 
 </footer>
+
 <script src="script.js"></script>
+<script>
+  function switchLanguage(lang) {
+    if (lang === 'en') {
+      document.getElementById('page-title').innerText = "Funko Planet";
+      document.getElementById('nav-owner').innerText = "Mary Kanta";
+      document.getElementById('nav-home').innerText = "Home";
+      document.getElementById('nav-history').innerText = "History of Funko Pops";
+      document.getElementById('nav-products').innerText = "Products";
+      document.getElementById('nav-game').innerText = "Game";
+      document.getElementById('nav-cart').innerText = "Cart";
+
+      document.getElementById('hero-title').innerHTML = "<b>Welcome to the Planet of Funko</b>";
+      document.getElementById('hero-desc').innerHTML = "<br>the ultimate destination for every collector and pop culture fan<br>In our Funko Pop e-shop you will find unique figures from your favorite heroes, series and movies that elevate every collection. Each Funko Pop is a small story, a piece of the world you love, ready to become yours.";
+      document.getElementById('changeImageButton').innerText = "Change Image";
+
+      document.getElementById('cta-title').innerText = "🎁 Win a Discount";
+      document.getElementById('cta-desc').innerText = "Play the Funko Game and get a -10% coupon";
+      document.getElementById('cta-btn').innerText = "Play Now";
+
+      document.getElementById('footer-contact').innerText = "Contact: funkoplanet@gmail.com";
+      document.getElementById('footer-creator').innerHTML = "Created by: <a href='../index.html'>Mary Kanta</a>";
+    } else {
+      document.getElementById('page-title').innerText = "Funko Planet";
+      document.getElementById('nav-owner').innerText = "Μαίρη Κάντα";
+      document.getElementById('nav-home').innerText = "Αρχική";
+      document.getElementById('nav-history').innerText = "Η ιστορία των Funko Pop";
+      document.getElementById('nav-products').innerText = "Προϊόντα";
+      document.getElementById('nav-game').innerText = "Παιχνίδι";
+      document.getElementById('nav-cart').innerText = "Καλάθι";
+
+      document.getElementById('hero-title').innerHTML = "<b> Καλώς ήρθες στον Πλανήτη των Funko </b>";
+      document.getElementById('hero-desc').innerHTML = "<br> στον απόλυτο προορισμό για κάθε συλλέκτη και fan της pop κουλτούρας <br>Στο Funko Pop e-shop μας θα βρεις μοναδικές φιγούρες από τους αγαπημένους σου ήρωες, <br>σειρές και ταινίες που απογειώνουν κάθε συλλογή. Κάθε Funko Pop είναι μια μικρή ιστορία,<br> ένα κομμάτι από τον κόσμο που αγαπάς, έτοιμο να γίνει δικό σου.";
+      document.getElementById('changeImageButton').innerText = "Αλλαγή εικόνας";
+
+      document.getElementById('cta-title').innerText = "🎁 Κέρδισε έκπτωση";
+      document.getElementById('cta-desc').innerText = "Παίξε το Funko Game και πάρε κουπόνι -10%";
+      document.getElementById('cta-btn').innerText = "Παίξε τώρα";
+
+      document.getElementById('footer-contact').innerText = "Επικοινωνία: funkoplanet@gmail.com";
+      document.getElementById('footer-creator').innerHTML = "Δημιουργία: <a href='../index.html'>Μαίρη Κάντα</a>";
+    }
+  }
+</script>
 </body>
 </html>
-
